@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Room</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+
+  <div class="top-menu bg-primary py-2">
+    <div class="row p-0 m-0">
+      <div class="col-12 text-white">
+        <div class="row p-0 m-0 text-center align-items-center justify-content-center">
+          <div class="col-lg-6 logo"><a href="index.html" class="text-white">FindRoom</a></div>
+          <div class="col-lg-6 utility row justify-content-center">
+            <div class="user row align-items-center p-0 m-0">
+              <div class="avt avt-user mx-2">
+                <img class="w-100 h-100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlrM8MCBKi5eUv2oof-6lRg9QGKRsMb0XjEw&usqp=CAU" alt="">
+              </div>
+              <div class="name-user">
+                <span>
+                  findRoom
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="wrapper">
+    <div id="sidebar-wrapper">
+      <ul class="sidebar-nav text-center px-4">
+        <li class="text-left">
+          <div id="accordion" class="myaccordion">
+            <div class="card">
+              <div class="card-header p-0" id="headingTwo">
+                <a href="index.html" class="text-dark py-2 menu-item"><i class="fas fa-users"></i>&nbsp;Quản lý người dùng</a>
+                <a href="room.html" class="text-dark py-2 menu-item"><i class="fas fa-house-user"></i>&nbsp;Quản lý phòng</a>
+              </div>
+              <!-- <div id="sidebar-shipping" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body p-0">
+                  <ul class="p-0 list-unstyled">
+                    <li>Informatics</li>
+                    <li>Mathematics</li>
+                    <li>Greek</li>
+                    <li>Biostatistics</li>
+                    <li>English</li>
+                    <li>Nursing</li>
+                  </ul>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div id="page-content-wrapper 0">
+      <div class="container-fluid 0">
+        <div class="row">
+          <div class="col-lg-12 p-0 d-menu-toggle">
+            <a href="#menu-toggle" class="btn" id="menu-toggle">|||</a>
+          </div>
+          <div class="col-12 container">
+            <div class="col-12">
+              <div class="row p-0 m-0">
+                <div class="col-lg-4 p-0 m-0 pb-2">
+                  <input type="text" placeholder="Tìm kiếm" class="form-control">
+                </div>
+                <div class="col-lg-4 p-0 m-0 pb-2"></div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="row p-0 m-0 table-responsive">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th>Sản phẩm</th>
+                      <th>Tổng đơn hàng</th>
+                      <th>Số tiền hoàn lại</th>
+                      <th>Trạng thái</th>
+                      <th>Thao tác</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="img-product">
+                        <img src="https://i1.wp.com/www.omanobserver.om/wp-content/uploads/2019/11/Sea-coast.jpg?fit=1500%2C840&ssl=1" alt="" class="w-100">
+                        <div class="name-product">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </div>
+                      </td>
+                      <td class="total-bill text-center align-middle">1.200.000</td>
+                      <td class="refund-bill text-danger text-center align-middle">1.200.000</td>
+                      <td class="staus-bill text-center align-middle">Đang luu kho</td>
+                      <td class="action text-center align-middle"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+      $('document').ready(function () {
+        var url = 'http://localhost:8080/rooms';
+        //alert(url);
+        jQuery.ajax({
+            url: url,
+            type: "GET",
+            headers: {"Authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZmQ5Yjc0NmNhMTJlNzAwMjQxOTcyYzUiLCJwaG9uZSI6IjAxMjM0NTY3ODkiLCJpYXQiOjE2MDgxMDcyNzksImV4cCI6MTYxMDY5OTI3OX0.a0QZW0dXvJxodqWOMXzDccwQ7abk0M57hlYOcJU-CUE"},
+            success: function(data){
+              console.log(data)
+            }
+          });
+      })
+    </script>
+</body>
+
+</html>
